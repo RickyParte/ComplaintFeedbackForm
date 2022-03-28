@@ -9,19 +9,20 @@
 <body class="bg-dark">
     
 <div class="container mt-3">
-<table class="table table-warning table-hover  table-striped table-responsive">
-<thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Roll Number</th>
-        <th scope="col">Branch</th>
-        <th scope="col">Email</th>
-        <th scope="col">Mobile Number</th>
-        <th scope="col">Description</th>
-    </tr>
-</thead>
-<tbody>
+    <h2 class="text-center text-warning">Feedback/Complaints</h2>
+    <table class="table table-warning table-hover  table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Branch</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
     
         <?php
 
@@ -31,27 +32,27 @@
             $count=1;
             while($rowData=mysqli_fetch_assoc($runQuery))
             {
-                
-                ?>
+                echo "
                 <tr>
-                <td><?php echo $count; ?></td>
-                <td><?php echo $rowData['name']; ?></td>
-                <td><?php echo $rowData['rollnumber']; ?></td>
-                <td><?php echo $rowData['branch']; ?></td>
-                <td><?php echo $rowData['email']; ?></td>
-                <td><?php echo $rowData['mobilenumber']; ?></td>
-                <td><?php echo $rowData['description']; ?></td>
-                </tr>
-                <?php
+                    <td>$count</td>
+                    <td> $rowData[name] </td>
+                    <td> $rowData[rollnumber]</td>
+                    <td> $rowData[branch]</td>
+                    <td> $rowData[email]</td>
+                    <td> $rowData[mobilenumber]</td>
+                    <td> $rowData[description]</td>
+                </tr>";
                 $count++;
+                
             }
             
 
         ?>
-    
-</tbody>
-</table>
-<a href="index.php"><button class="btn btn-primary"> Complaint Feedback Submission Form </button></a>
+        </tbody>
+    </table>
+    <a href="index.php">
+        <button class="btn btn-primary"> Complaint Feedback Submission Form </button>
+    </a>
 </div>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
