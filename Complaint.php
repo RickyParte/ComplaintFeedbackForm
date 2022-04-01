@@ -1,17 +1,21 @@
 <?php
 
-include ('Connection.php');
+    include ('connection.php');
 
-$fullName=$_POST['fullname'];
-$rollNo=$_POST['rollno'];
-$branch=$_POST['branch'];
-$mobile=$_POST['mobileno'];
-$email=$_POST['email'];
-$description=$_POST['describeissue'];
 
 if(isset($_POST['submitComplaint']))
 {
-    $insertQuery="insert into feedback  values ('$fullName','$rollNo','$branch','$email','$mobile','$description')";
+    $fullName=$_POST['fullname'];
+    $rollNo=$_POST['rollno'];
+    $branch=$_POST['branch'];
+    $mobile=$_POST['mobileno'];
+    $email=$_POST['email'];
+    $description=$_POST['describeissue'];
+    date_default_timezone_set('Asia/Kolkata');
+    $datetime=date('d-m-y H:i:s');
+
+    $insertQuery="insert into feedback (name,rollnumber,branch,email,mobilenumber,description,datetime)  values
+    ('$fullName','$rollNo','$branch','$email','$mobile','$description','$datetime')";
     $runQuery=mysqli_query($connection,$insertQuery);
     if($runQuery)
     {
