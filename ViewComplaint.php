@@ -20,6 +20,7 @@
                 <th>Email</th>
                 <th>Mobile Number</th>
                 <th>Description</th>
+                <th>Time</th>
             </tr>
         </thead>
         <tbody>
@@ -36,11 +37,12 @@
                 <tr>
                     <td>$count</td>
                     <td> $rowData[name] </td>
-                    <td> $rowData[rollnumber]</td>
-                    <td> $rowData[branch]</td>
-                    <td> $rowData[email]</td>
-                    <td> $rowData[mobilenumber]</td>
-                    <td> $rowData[description]</td>
+                    <td> $rowData[rollnumber] </td>
+                    <td> $rowData[branch] </td>
+                    <td> $rowData[email] </td>
+                    <td> $rowData[mobilenumber] </td>
+                    <td> $rowData[description] </td>
+                    <td> $rowData[datetime] </td>
                 </tr>";
                 $count++;
                 
